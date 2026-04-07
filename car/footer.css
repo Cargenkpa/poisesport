@@ -1,0 +1,161 @@
+/* Footer Container */
+.site-footer {
+    background-color: #fff;
+    color: #000;
+    padding: 60px 10% 30px;
+    position: relative;
+    font-family: 'Arial Narrow', sans-serif;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+/* Brand/Logo Styling */
+.footer-logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-top: -5px;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* List Styling */
+.footer-column h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-line {
+    width: 100%;
+    border: none;
+    border-top: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: opacity 0.1s;
+}
+
+.footer-column ul li a:hover {
+    opacity: 0.6;
+}
+
+/* Partner Logos */
+.footer-partners {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-partners img {
+    height: 60px;
+    width: auto;
+    filter: grayscale(100%); /* Keeps it classy like the image */
+    transition: filter 0.1s;
+}
+
+.footer-partners img:hover {
+    filter: grayscale(0%);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #666;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+    }
+}
+/* ==========================================
+   1. BASE / MOBILE STYLES (Default)
+   Targets: All devices, specifically Small Smartphones
+   ========================================== */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. SMALL DEVICES / LARGE PHONES
+   Targets: Devices wider than 576px (Landscape phones)
+   ========================================== */
+@media screen and (min-width: 576px) {
+    /* Your code for large phones here */
+}
+
+/* ==========================================
+   3. TABLETS
+   Targets: Devices wider than 768px (iPads, Tablets)
+   ========================================== */
+@media screen and (min-width: 768px) {
+    /* Your code for tablets here */
+}
+
+/* ==========================================
+   4. LAPTOPS & DESKTOPS
+   Targets: Devices wider than 1024px (Laptops, Small Monitors)
+   ========================================== */
+@media screen and (min-width: 1024px) {
+    /* Your code for computers here */
+}
+
+/* ==========================================
+   5. LARGE SCREENS
+   Targets: Devices wider than 1200px (Large Desktop Monitors)
+   ========================================== */
+@media screen and (min-width: 1200px) {
+    /* Your code for extra wide screens here */
+}

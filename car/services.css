@@ -1,0 +1,142 @@
+/* --- Services Section --- */
+.services-section {
+    background-color: rgb(212, 215, 193); /* Matching your previous theme */
+    padding: 100px 0;
+}
+
+.services-main-title {
+    font-family: 'Algerian', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.heading-line.centered {
+    margin: 0 auto 60px auto;
+}
+
+/* Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Service Card Design */
+.service-card {
+    position: relative;
+    height: 400px;
+    background-color: #111; /* Dark background */
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    color: white;
+}
+
+.card-content h3 {
+    font-family: 'Algerian', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.1s ease;
+}
+
+/* Hover Interactivity */
+.service-card:hover .card-content h3 {
+    transform: translateY(0);
+}
+
+.service-card:hover .card-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ==========================================
+   1. BASE / MOBILE STYLES (Default)
+   Targets: All devices, specifically Small Smartphones
+   ========================================== */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.slide {
+    /* Scale the image so the whole body fits without being cut off */
+    background-size: contain; 
+    
+    /* Keep the image centered so the head and feet stay visible */
+    background-position: center center; 
+    
+    /* Prevent the image from repeating if the screen is very wide */
+    background-repeat: no-repeat; 
+    
+    /* Ensure a dark background color behind the image if it doesn't fill the screen */
+    background-color: #000; 
+    
+    width: 100%;
+    height: 100vh;
+}
+
+/* ==========================================
+   2. SMALL DEVICES / LARGE PHONES
+   Targets: Devices wider than 576px (Landscape phones)
+   ========================================== */
+@media screen and (min-width: 576px) {
+    /* Your code for large phones here */
+}
+
+/* ==========================================
+   3. TABLETS
+   Targets: Devices wider than 768px (iPads, Tablets)
+   ========================================== */
+@media screen and (min-width: 768px) {
+    /* Your code for tablets here */
+}
+
+/* ==========================================
+   4. LAPTOPS & DESKTOPS
+   Targets: Devices wider than 1024px (Laptops, Small Monitors)
+   ========================================== */
+@media screen and (min-width: 1024px) {
+    /* Your code for computers here */
+}
+
+/* ==========================================
+   5. LARGE SCREENS
+   Targets: Devices wider than 1200px (Large Desktop Monitors)
+   ========================================== */
+@media screen and (min-width: 1200px) {
+    /* Your code for extra wide screens here */
+}

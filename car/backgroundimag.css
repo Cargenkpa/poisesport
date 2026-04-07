@@ -1,0 +1,78 @@
+/* Container for the background images */
+.slideshow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Keeps images behind all other content */
+    overflow: hidden;
+}
+
+/* Individual slides */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1.0s ease-in-out; /* Speed of the fade transition */
+}
+
+/* The visible slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Semi-transparent overlay to help text stand out */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust 0.5 to change darkness */
+    z-index: 1;
+}
+/* ==========================================
+   1. BASE / MOBILE STYLES (Default)
+   Targets: All devices, specifically Small Smartphones
+   ========================================== */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. SMALL DEVICES / LARGE PHONES
+   Targets: Devices wider than 576px (Landscape phones)
+   ========================================== */
+@media screen and (min-width: 576px) {
+    /* Your code for large phones here */
+}
+
+/* ==========================================
+   3. TABLETS
+   Targets: Devices wider than 768px (iPads, Tablets)
+   ========================================== */
+@media screen and (min-width: 768px) {
+    /* Your code for tablets here */
+}
+
+/* ==========================================
+   4. LAPTOPS & DESKTOPS
+   Targets: Devices wider than 1024px (Laptops, Small Monitors)
+   ========================================== */
+@media screen and (min-width: 1024px) {
+    /* Your code for computers here */
+}
+
+/* ==========================================
+   5. LARGE SCREENS
+   Targets: Devices wider than 1200px (Large Desktop Monitors)
+   ========================================== */
+@media screen and (min-width: 1200px) {
+    /* Your code for extra wide screens here */
+}

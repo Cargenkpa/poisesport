@@ -1,0 +1,171 @@
+/* Contact Page Specific Styles */
+.contact-page-wrapper {
+    background-color: #E8E8E8;
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    width: 100%;
+    gap: 0;
+}
+
+/* Sidebar Info */
+.info-column {
+    padding-right: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.heading-divider {
+    width: 60px;
+    height: 4px;
+    background: #000;
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.contact-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* The Vertical Line Divider */
+.form-column {
+    padding-left: 60px;
+    border-left: 2.5px solid #000;
+}
+
+.form-header {
+    color: #888;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* Form Styling */
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-family: inherit;
+    outline: none;
+}
+
+.input-group textarea {
+    height: 140px;
+    resize: none;
+}
+
+.send-btn {
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.send-btn:hover {
+    background: #333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .contact-split-layout {
+        grid-template-columns: 1fr;
+    }
+    .form-column {                      
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid #000;
+        padding-top: 40px;
+    }
+    .info-column {
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+}
+/* ==========================================
+   1. BASE / MOBILE STYLES (Default)
+   Targets: All devices, specifically Small Smartphones
+   ========================================== */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. SMALL DEVICES / LARGE PHONES
+   Targets: Devices wider than 576px (Landscape phones)
+   ========================================== */
+@media screen and (min-width: 576px) {
+    /* Your code for large phones here */
+}
+
+/* ==========================================
+   3. TABLETS
+   Targets: Devices wider than 768px (iPads, Tablets)
+   ========================================== */
+@media screen and (min-width: 768px) {
+    /* Your code for tablets here */
+}
+
+/* ==========================================
+   4. LAPTOPS & DESKTOPS
+   Targets: Devices wider than 1024px (Laptops, Small Monitors)
+   ========================================== */
+@media screen and (min-width: 1024px) {
+    /* Your code for computers here */
+}
+
+/* ==========================================
+   5. LARGE SCREENS
+   Targets: Devices wider than 1200px (Large Desktop Monitors)
+   ========================================== */
+@media screen and (min-width: 1200px) {
+    /* Your code for extra wide screens here */
+}

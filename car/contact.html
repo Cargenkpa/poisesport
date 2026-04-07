@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poise Sports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* BASE STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+
+        /* NAVBAR & SOCIAL ICONS */
+        .navbar {
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.5rem 2rem; background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+        }
+        .logo { font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { text-decoration: none; color: #fff; font-size: 0.8rem; letter-spacing: 1px; }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .social-icons a { color: #fff; text-decoration: none; font-size: 1.2rem; transition: 0.3s; display: flex; align-items: center; }
+        .social-icons a:hover { opacity: 0.7; transform: scale(1.1); }
+
+        /* TRANSFERMARKT ICON STYLING */
+        .tm-icon svg {
+            width: 20px; /* Matches FontAwesome size */
+            height: 20px;
+            fill: #fff; /* White by default */
+            transition: 0.3s;
+        }
+        .tm-icon:hover svg { fill: #1a3151; /* TM Blue on hover */ }
+
+        /* SLIDESHOW */
+        .slideshow-container { position: relative; height: 100vh; width: 100%; overflow: hidden; }
+        .slide {
+            position: absolute; inset: 0;
+            background-size: cover; background-position: center;
+            opacity: 0; transition: opacity 1s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+        .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+
+        /* CONTACT SECTION */
+        .contact-page-wrapper { padding: 6rem 2rem; background: #ececec; color: #111; }
+        .contact-split-layout {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; max-width: 1200px; margin: auto; align-items: start;
+        }
+        .underline { width: 50px; height: 4px; background: #111; margin: 10px 0 20px; border: none; }
+        .contact-details p { display: flex; align-items: center; margin-bottom: 10px; font-weight: 500; }
+        .contact-details i { margin-right: 10px; }
+
+        /* FORM STYLES */
+        .contact-form-wrapper form { display: flex; flex-direction: column; gap: 15px; }
+        .input-row { display: flex; gap: 15px; }
+        .input-group { flex: 1; display: flex; flex-direction: column; }
+        .input-group label { font-weight: bold; margin-bottom: 5px; font-size: 0.8rem; }
+        .input-group input, .input-group select, .input-group textarea {
+            padding: 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff;
+        }
+        .send-btn {
+            background: #111; color: #fff; padding: 15px; border: none;
+            font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .send-btn:hover { background: #333; }
+
+        /* FOOTER */
+        .site-footer { padding: 3rem 2rem; background: #000; color: #fff; }
+        .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin: auto; gap: 2rem; }
+        .footer-line { margin: 10px 0; border: 0; border-top: 1px solid #333; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li a { color: #ccc; text-decoration: none; font-size: 0.9rem; line-height: 2; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .contact-split-layout { grid-template-columns: 1fr; }
+            .input-row { flex-direction: column; }
+            nav { display: none; } /* Simplified for single file example */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Poise Sports</div>
+        
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="new.php">NEWS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            
+            <a href="https://www.transfermarkt.com/poise-entertainment-group/beraterfirma/berater/15775" target="_blank" class="tm-icon" title="Transfermarkt">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5 2C5.98 2 1.5 6.48 1.5 12s4.48 10 10 10 10-4.48 10-10S17.02 2 11.5 2zm3.95 14.59h-1.83l-.58-3.08h-3.14l-.58 3.08H7.49l1.88-8.91h2.24l.32 1.76h.12l.32-1.76h2.24l1.84 8.91z"/>
+                    <path d="M10.3 11.8h1.4l-.4-2.1h-.1l-.9 2.1z"/>
+                </svg>
+            </a>
+
+            <a href="mailto:info@poiseentertainmentgroup.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div id="hero-section" class="slideshow-container">
+        <div id="hero-section" class="slideshow-container">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade8f55?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d64b8?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1593341646261-659c91b8797f?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('cap1.jpg');"></div>
+        <div class="slide" style="background-image: url('nel.jpg');"></div>
+        <div class="slide" style="background-image: url('rashy1.jpg');"></div>
+        <div class="slide" style="background-image: url('cap2.jpg');"></div>
+        <div class="slide" style="background-image: url('sir2.jpg');"></div>
+        <div class="slide" style="background-image: url('opku.jpeg');"></div>
+        <div class="slide" style="background-image: url('juus.jpg');"></div>
+        <div class="slide" style="background-image: url('edw.jpg');"></div>
+        <div class="slide" style="background-image: url('pewee.jpg');"></div>
+        <div class="slide" style="background-image: url('sirr.jpg');"></div>
+        <div class="slide" style="background-image: url('rashy.jpg');"></div>
+        <div class="slide" style="background-image: url('dukuly.jpg');"></div>
+        <div class="slide" style="background-image: url('fadiga.jpg');"></div>
+
+        </div>
+    </div>
+
+   <main class="contact-page-wrapper">
+    <div class="contact-split-layout">
+
+        <!-- Left Side: Info -->
+        <div class="contact-info">
+            <h1>GET IN TOUCH</h1>
+            <hr class="underline">
+            <p>Feel free to email us or use the contact form on this page. We will do our best to respond during business hours.</p>
+            
+            <div class="contact-details">
+                <p><i class="fas fa-briefcase"></i> 9:00AM - 17:00PM, MON - FRI</p>
+                <p><i class="fas fa-envelope"></i> info@poiseentertainmentgroup.com</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="contact-form-wrapper">
+            <h1>CONTACT</h1>
+            <form action="https://formspree.io/f/mlgdqvoz" method="POST">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="fullname">FULL NAME *</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">EMAIL *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">PHONE *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="subject">WHAT WOULD YOU LIKE TO TALK ABOUT *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="Representation">REPRESENTATION</option>
+                        <option value="Recruitment">RECRUITMENT</option>
+                        <option value="Commercial">COMMERCIAL</option>
+                        <option value="General">GENERAL ENQUIRY</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">MESSAGE *</label>
+                    <textarea id="message" name="message" placeholder="TELL US MORE" required></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+   <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-column brand-info">
+                <h2 class="footer-logo">POISE</h2>
+                <p class="brand-sub">SPORTS MANAGEMENT</p>
+                <p class="copyright">© 2026 POISE SPORTS MANAGEMENT</p>
+            </div>
+            <div class="footer-column">
+                <h3>PAGES</h3>
+                <hr class="footer-line">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="new.php">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.php" style="color: #666; font-weight: bold; font-size: 0.8rem; margin-top: 20px; display: inline-block;"><i class="fas fa-lock"></i> ADMIN LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>LEGAL</h3>
+                <hr class="footer-line">
+                <ul>
+                    <li><a href="#">TERMS & CONDITIONS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="design.js"></script>
+    <script src="about.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
+    <script>
+        // Simple Slideshow Logic
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

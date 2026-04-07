@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poise Sports</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVIGATION
+           ========================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+        }
+
+        .brand-small {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .brand-small span {
+            font-weight: 400;
+            font-size: 0.9rem;
+            margin-left: 6px;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+
+        nav a.active, nav a:hover {
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center; /* Ensures vertical alignment */
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Transfermarkt Icon Specific Styling */
+        .tm-icon svg {
+            width: 20px; /* Matches Font Awesome size */
+            height: auto;
+            fill: currentColor; /* Inherits #fff from link */
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            color: #1a3151; /* Turns blue on hover */
+        }
+
+        /* =========================
+           HAMBURGER & MOBILE
+           ========================= */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 2px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease;
+            }
+            nav.active { right: 0; }
+            nav ul { flex-direction: column; gap: 40px; }
+            .social-icons { display: none; }
+        }
+
+        /* =========================
+           HERO
+           ========================= */
+        .slideshow-container {
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .slide.active { opacity: 1; }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            letter-spacing: 0.6em;
+            white-space: nowrap;
+        }
+
+        .main-title span {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: inline-block;
+        }
+
+        .main-title span.visible { opacity: 1; }
+
+        .sub-title {
+            margin-top: 10px;
+            letter-spacing: 6px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand-small">
+        POISE <span>SPORTS</span>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="home.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="new.php">NEWS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="admin.php" style="color: #666; font-size: 0.8rem;"><i class="fas fa-lock"></i> ADMIN LOGIN</a></li>
+        </ul>
+    </nav>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/p/C6147P0SdXT/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/16o9AnnWZq/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        
+        <a href="https://www.transfermarkt.com/poise-entertainment-group/beraterfirma/berater/15775" target="_blank" class="tm-icon" title="Transfermarkt">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.5 2C5.98 2 1.5 6.48 1.5 12s4.48 10 10 10 10-4.48 10-10S17.02 2 11.5 2zm3.95 14.59h-1.83l-.58-3.08h-3.14l-.58 3.08H7.49l1.88-8.91h2.24l.32 1.76h.12l.32-1.76h2.24l1.84 8.91z"/>
+                <path d="M10.3 11.8h1.4l-.4-2.1h-.1l-.9 2.1z"/>
+            </svg>
+        </a>
+
+        <a href="mailto:info@poisesports.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</header>
+
+<section class="slideshow-container">
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1579952363873-27f3bade8f55');"></div>
+    <div class="overlay"></div>
+
+    <main class="hero">
+        <div>
+            <h1 id="animated-logo" class="main-title"></h1>
+            <p class="sub-title">SPORTS MANAGEMENT</p>
+        </div>
+    </main>
+</section>
+
+<script>
+    // Mobile Navigation
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+
+    // Animated POISE Text
+    const text = "POISE";
+    const container = document.getElementById("animated-logo");
+
+    function animateText() {
+        container.innerHTML = "";
+        [...text].forEach((letter, index) => {
+            const span = document.createElement("span");
+            span.textContent = letter;
+            container.appendChild(span);
+            setTimeout(() => span.classList.add("visible"), index * 300);
+        });
+    }
+
+    animateText();
+    setInterval(animateText, 3000);
+</script>
+
+</body>
+</html>

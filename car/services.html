@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poise Sports</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS to ensure the Transfermarkt SVG matches the Font Awesome icons */
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tm-icon svg {
+            width: 20px; /* Standard size for social icons */
+            height: 20px;
+            fill: #ffffff; /* Matches Font Awesome color */
+            transition: opacity 0.3s ease;
+            vertical-align: middle;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Poise Sports</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span>&#9776;</span> 
+        </div>
+        
+        <nav>
+            <ul id="nav-list">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="new.php">NEWS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/p/C6147P0SdXT/?utm"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1A8c7JEUCP/"><i class="fa-brands fa-facebook"></i></a>
+            
+            <a href="https://www.transfermarkt.com/poise-entertainment-group/beraterfirma/berater/15775" target="_blank" class="tm-icon" title="Transfermarkt">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5 2C5.98 2 1.5 6.48 1.5 12s4.48 10 10 10 10-4.48 10-10S17.02 2 11.5 2zm3.95 14.59h-1.83l-.58-3.08h-3.14l-.58 3.08H7.49l1.88-8.91h2.24l.32 1.76h.12l.32-1.76h2.24l1.84 8.91z"/>
+                    <path d="M10.3 11.8h1.4l-.4-2.1h-.1l-.9 2.1z"/>
+                </svg>
+            </a>
+
+            <a href="mailto:info@poiseentertainmentgroup.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <div id="hero-section" class="slideshow-container">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade8f55?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d64b8?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1593341646261-659c91b8797f?q=80&w=1920&auto=format&fit=crop');"></div>
+        <div class="slide" style="background-image: url('cap1.jpg');"></div>
+        <div class="slide" style="background-image: url('nel.jpg');"></div>
+        <div class="slide" style="background-image: url('rashy1.jpg');"></div>
+        <div class="slide" style="background-image: url('cap2.jpg');"></div>
+        <div class="slide" style="background-image: url('sir2.jpg');"></div>
+        <div class="slide" style="background-image: url('opku.jpeg');"></div>
+        <div class="slide" style="background-image: url('juus.jpg');"></div>
+        <div class="slide" style="background-image: url('edw.jpg');"></div>
+        <div class="slide" style="background-image: url('pewee.jpg');"></div>
+        <div class="slide" style="background-image: url('sirr.jpg');"></div>
+        <div class="slide" style="background-image: url('rashy.jpg');"></div>
+        <div class="slide" style="background-image: url('dukuly.jpg');"></div>
+        <div class="slide" style="background-image: url('fadiga.jpg');"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <main>
+        <section id="services" class="services-section">
+            <div class="main-content-wrapper">
+                <h1 class="center">WHAT SETS US APART?</h1>
+                <p>We take a holistic, personalized approach to your career, ensuring your best interests always lead the way.
+                    By treating you and your family as true partners, we build the trust necessary to help you
+                     thrive. You can expect open dialogue and straightforward feedback following every performance,
+                      giving you the tools to keep evolving and eventually reach the very top of your game.</p>
+                <div class="heading-line centered"></div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="commercial">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h2>DEDICATED REPRESENTATION</h2>
+                            <p>Poise Sports combines deep industry knowledge with a sharp focus on detail to guide your career forward. Our bespoke, proactive approach is built to help you maximize your success and find the right fit in today’s competitive market. From the first negotiation to the final signature, we leverage our global network to ensure your professional 
+                                transition is handled with expert care and success.</p>
+                        </div>
+                    </div>
+                    <div class="service-card" data-service="lifestyle">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h2>FROM FIELD TO FINANCE</h2>
+                            <p>Poise Sports delivers elite representation driven by expert market knowledge and a proactive mindset. We work to ensure you reach your full potential by identifying and securing elite opportunities in the competitive sports market. With a focus on smooth career progression, we handle all aspects of industry 
+                                negotiations and moves using our extensive network and specialized insight.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heading-line centered"></div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="commercial">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h2>GLOBAL BRAND MANAGEMENT</h2>
+                            <p>We are dedicated to building and promoting elite athlete profiles to capture 
+                                commercial opportunities in the global marketplace. Our team uses strategic positioning and
+                                social media expertise to create personal brands that stand out and connect with audiences. By emphasizing your skills and personal journey, we increase your visibility to major brands, landing valuable sponsorship 
+                                deals that expand your reach and secure your financial future outside of sports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heading-line centered"></div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="commercial">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h2>CAREER PATH MENTORSHIP</h2>
+                            <p>At Poise Sports, we understand the high-stakes environment that young talents and established pros navigate daily. By providing expert, firsthand guidance, we help you and your family manage the complexities of the sports world, including first-time contracts, scholarships, and strategic development loans. We are dedicated to your long-term success, focusing on 
+                                continuous career expansion and the upward trajectory of your earning potential.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heading-line centered"></div>
+                <div class="services-grid">
+                    <div class="service-card" data-service="commercial">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <h2>HOLISTIC PERFORMANCE & CARE</h2>
+                            <p>The intense demands of top-tier football require you to be at your best every single day. To ensure you stay there, Poise Sports has built a specialist support network featuring sports therapists, personal trainers, medical experts, and private football coaches. We place the highest priority on your mental health and overall wellbeing, providing seamless access to trusted professionals 
+                                who operate with total discretion and respect for your privacy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-column brand-info">
+                <h2 class="footer-logo">POISE</h2>
+                <p class="brand-sub">SPORTS MANAGEMENT</p>
+                <p class="copyright">© 2026 POISE SPORTS MANAGEMENT</p>
+            </div>
+            <div class="footer-column">
+                <h3>PAGES</h3>
+                <hr class="footer-line">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="new.php">NEWS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="admin.php" style="color: #666; font-weight: bold; font-size: 0.8rem; margin-top: 20px; display: inline-block;"><i class="fas fa-lock"></i> ADMIN LOGIN</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>LEGAL</h3>
+                <hr class="footer-line">
+                <ul>
+                    <li><a href="#">TERMS & CONDITIONS</a></li>
+                    <li><a href="#">PRIVACY POLICY</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="design.js"></script>
+    <script src="services.js"></script>
+</body>
+</html>
